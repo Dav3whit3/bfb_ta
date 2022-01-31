@@ -21,3 +21,4 @@ RUN python -m venv venv \
 # ===== DEVELOPMENT =====
 FROM basic AS development
 COPY . .
+# RUN venv/bin/python manage.py createsuperuser --noinput
