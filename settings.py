@@ -12,9 +12,19 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+"""
+# Adding our custom apps folder to path here may avoid specifying it in the future
+# Utilizing base dir variable:
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+
+# or this way:
+PROJECT_ROOT = os.path.dirname(__file__)
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
+"""
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,6 +48,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-Party Apps
+    'rest_framework',
+
+    # Custom apps
+    'apps.mentors',
 ]
 
 MIDDLEWARE = [

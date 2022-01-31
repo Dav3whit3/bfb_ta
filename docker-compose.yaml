@@ -11,6 +11,7 @@ services:
       - POSTGRES_PASSWORD=postgres
 
   django-dev:
+    restart: always
     build:
       context: .
       target: development
