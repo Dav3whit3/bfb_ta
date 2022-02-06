@@ -15,7 +15,7 @@
 <br>
 -->
 
-<details open="closed">
+<details>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -24,7 +24,7 @@
 
 <br>
 
-<details open="closed">
+<details>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -81,7 +81,7 @@
 
 <br>
 
-<details open="closed">
+<details>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
