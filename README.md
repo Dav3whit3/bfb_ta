@@ -32,8 +32,24 @@
   `DJANGO_SUPERUSER_PASSWORD`
 
 - ### Build and run container
+  Build services
   ```bash
-  $ docker-compose build && docker-compose up
+  $ docker-compose
+  ```
+
+  For a Django db migration:
+  ```bash
+  $ docker-compose run db-migration
+  ```
+
+  If a Django superuser is required for the first setup:
+  ```bash
+  $ docker-compose run superuser
+  ```
+  
+  Launch the app:
+  ```bash
+  $ docker-compose up django-dev
   ```
 
 # Currently under develop

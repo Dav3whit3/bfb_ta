@@ -14,7 +14,7 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
   # This service will launch a Django DB migration
-  migrations:
+  db-migration:
     build: .
     command: venv/bin/python manage.py migrate
     depends_on:
