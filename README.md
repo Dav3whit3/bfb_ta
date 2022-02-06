@@ -74,9 +74,6 @@
   ```bash
   docker-compose up django-dev
   ```
-
-  ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
 </details>
 
 
