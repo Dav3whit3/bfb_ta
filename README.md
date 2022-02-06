@@ -18,7 +18,7 @@
 
 
 <details open="open">
-<summary><h2 style="display: inline-block;">:floppy_disk: Installation</h2></summary>
+<summary><span style="display: inline-block;">:floppy_disk: Installation</span></summary>
 
 - ### Install Docker :whale:
 
