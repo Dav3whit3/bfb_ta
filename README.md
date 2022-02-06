@@ -1,7 +1,9 @@
 <!-- TABLE OF CONTENTS -->
-<h2 id="table-of-contents"> :book: Table of Contents</h2>
 <details open="open">
-  <summary>Table of Contents</summary>
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+  <summary> :book: Table of Contents</summary>
   <ol>
     <li><a href="#Description"> ➤ Description</a></li>
     <li><a href="#Installation"> ➤ Installation</a></li>
@@ -10,19 +12,20 @@
   </ol>
 </details>
 
+
+<details open="open">
+
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## :pencil: Description
-<details open="open">
-<summary><span>Description</span></summary>
+<summary><span> :pencil: Description</span></summary>
 </details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
-## :floppy_disk: Installation
 
 <details open="open">
-<summary>Installation</summary>
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<summary> :floppy_disk: Installation</summary>
 
 - ### Install Docker :whale:
 
@@ -76,24 +79,10 @@
 
 </details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## :soon: Currently under develop
-
-- Make docker-compose service <superuser> run only by flag
-
-
-
-<!-- TABLE OF CONTENTS -->
 <details open="open">
 
-  ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-  <summary><strong>:book: Table of Contents</strong></summary>
-  <ol>
-    <li><a href="#Description"> ➤ Description</a></li>
-    <li><a href="#Installation"> ➤ Installation</a></li>
-    <li><a href="#Currently-under-develop"> ➤ Currently under develop</a></li>
-    <li><a href="#Folder-structure"> ➤ Folder structure</a></li>
-  </ol>
+  <summary> :soon: Currently under develop</summary>
 </details>
