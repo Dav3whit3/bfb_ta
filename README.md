@@ -16,11 +16,11 @@
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## Installation
+## :floppy_disk: Installation
 - ### Install Docker :whale:
   https://docs.docker.com/get-docker/
 
-- ### Environment Variables
+- ### :closed_lock_with_key: Environment Variables
   To run this project, you will need to add the following environment variables regarding DB mapping to your .env file:
 
   `POSTGRES_NAME`
