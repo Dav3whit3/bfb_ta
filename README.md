@@ -25,7 +25,9 @@ This coding challenge consists of developing a simple Rest API using Django and 
 - <strong>Models and relations</strong>. Create a model called Mentor, another one called Project, and another one called Mentorship. The models should have the following relationships(*) and fields:
 
 <div align="center">
+
 ![](assets/models.png)
+
 </div>
 
 A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor can have multiple Projects related to.
