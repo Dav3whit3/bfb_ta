@@ -18,9 +18,11 @@
 
 ## :floppy_disk: Installation
 
-<details open="open"> Installation
+<details open="open">
+  <summary>Table of Contents</summary>
 
 - ### Install Docker :whale:
+
   https://docs.docker.com/get-docker/
 
 - ### :closed_lock_with_key: Environment Variables
