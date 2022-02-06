@@ -86,10 +86,10 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary><strong>:book: Table of Contents</strong></summary>
 
   ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-  
+
+  <summary><strong>:book: Table of Contents</strong></summary>
   <ol>
     <li><a href="#Description"> ➤ Description</a></li>
     <li><a href="#Installation"> ➤ Installation</a></li>
