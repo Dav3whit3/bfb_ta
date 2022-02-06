@@ -22,7 +22,7 @@
 ## :floppy_disk: Installation
 
 <details open="open">
-<summary>Installation</summary>
+<summary> </summary>
 
 - ### Install Docker :whale:
 
