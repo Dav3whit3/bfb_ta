@@ -1,7 +1,9 @@
 version: '3.6'
 
 services:
-  db: # This service will launch a postgress DB. The serive name <db> is expected by django default db name.
+
+  # This service will launch a postgress DB. The serive name <db> is expected by django default db name.
+  db:
     image: postgres
     volumes:
       - ./data/db:/var/lib/postgresql/data
@@ -11,13 +13,15 @@ services:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
-  migrations: # This service will launch a Django DB migration
+  # This service will launch a Django DB migration
+  migrations:
     build: .
     command: venv/bin/python manage.py migrate
     depends_on:
       - db
 
-  superuser: # This service will create a Django superuser with the credentials set on .env
+  # This service will create a Django superuser with the credentials set on .env
+  superuser:
     build: .
     command: venv/bin/python manage.py createsuperuser --noinput
     environment:
@@ -33,7 +37,8 @@ services:
     depends_on:
       - db
 
-  django-dev: # This is the main service Django rest API
+  # This is the main service Django rest API
+  django-dev:
     restart: always
     build:
       context: .
