@@ -1,13 +1,3 @@
-## Index
-- [Description](#Description)
-- [Installation](#Installation)
-- [Currently under develop](#Currently-under-develop)
-- [Folder structure](#Folder-structure)
-
-- ta description
-- Assumptions
-- Approach
-
 <!-- TABLE OF CONTENTS -->
 <h2 id="table-of-contents"> :book: Table of Contents</h2>
 <details open="open">
@@ -22,7 +12,7 @@
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## Description
+## :pencil: Description
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
