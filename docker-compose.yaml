@@ -1,16 +1,39 @@
 version: '3.6'
 
 services:
-  db:
+  db: # This service will launch a postgress DB. The serive name <db> is expected by django default db name.
     image: postgres
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
+      # DB credentials to create the db
       - POSTGRES_NAME=${POSTGRES_NAME}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
-  django-dev:
+  migrations: # This service will launch a Django DB migration
+    build: .
+    command: venv/bin/python manage.py migrate
+    depends_on:
+      - db
+
+  superuser: # This service will create a Django superuser with the credentials set on .env
+    build: .
+    command: venv/bin/python manage.py createsuperuser --noinput
+    environment:
+      # DB credentials needed to create the superuser
+      - POSTGRES_NAME=${POSTGRES_NAME}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+      # Django ENV variables to create the superuser
+      - DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME}
+      - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL}
+      - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
+    depends_on:
+      - db
+
+  django-dev: # This is the main service Django rest API
     restart: always
     build:
       context: .
@@ -19,6 +42,7 @@ services:
       - "8000:8000"
     command: venv/bin/python3 manage.py runserver 0.0.0.0:8000
     environment:
+      # DB credentials needed to connect to the db
       - POSTGRES_NAME=${POSTGRES_NAME}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}

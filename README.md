@@ -11,27 +11,36 @@
 
 # Description
 # Installation
+- ### Install Docker :whale:
+  https://docs.docker.com/get-docker/
 
-### Install Docker :whale:
-https://docs.docker.com/get-docker/
+<br/>
 
-### Environment Variables
+- ### Environment Variables
+  To run this project, you will need to add the following environment variables regarding DB mapping to your .env file:
 
-To run this project, you will need to add the following environment variables to your .env file
+  `POSTGRES_NAME`
 
-`POSTGRES_NAME`
+  `POSTGRES_USER`
 
-`POSTGRES_USER`
+  `POSTGRES_PASSWORD`
 
-`POSTGRES_PASSWORD`
+  <br/>And the following ones to setup an admin user for Django:
 
-`DJANGO_SUPERUSER_USERNAME`
+  `DJANGO_SUPERUSER_USERNAME`
 
-`DJANGO_SUPERUSER_EMAIL`
+  `DJANGO_SUPERUSER_EMAIL`
 
-`DJANGO_SUPERUSER_PASSWORD`
+  `DJANGO_SUPERUSER_PASSWORD`
 
-### Build and run container
-```bash
-docker-compose build && docker-compose up
-```
+<br/>
+
+- ### Build and run container
+  ```bash
+  $ docker-compose build && docker-compose up
+  ```
+
+
+# Currently under develop
+
+- Make docker-compose service <superuser> run only by flag
