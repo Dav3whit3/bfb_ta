@@ -81,3 +81,16 @@
 ## :soon: Currently under develop
 
 - Make docker-compose service <superuser> run only by flag
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><strong>:book: Table of Contents</strong></summary>
+  <ol>
+    <li><a href="#Description"> ➤ Description</a></li>
+    <li><a href="#Installation"> ➤ Installation</a></li>
+    <li><a href="#Currently-under-develop"> ➤ Currently under develop</a></li>
+    <li><a href="#Folder-structure"> ➤ Folder structure</a></li>
+  </ol>
+</details>
