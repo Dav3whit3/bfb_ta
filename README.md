@@ -75,6 +75,6 @@
 
 </details>
 
-## Currently under develop
+## :soon: Currently under develop
 
 - Make docker-compose service <superuser> run only by flag
