@@ -1,9 +1,7 @@
-<!-- TABLE OF CONTENTS 
+<!-- TABLE OF CONTENTS -->
+<h2 id="table-of-contents"> :book: Table of Contents</h2>
 <details open="open">
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
-  <summary> :book: Table of Contents</summary>
+  <summary>Table of Contents</summary>
   <ol>
     <li><a href="#Description"> ➤ Description</a></li>
     <li><a href="#Installation"> ➤ Installation</a></li>
@@ -12,34 +10,19 @@
   </ol>
 </details>
 
-<br>
--->
-
-<details>
-
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-<summary><span> :pencil: Description</span></summary>
-This coding challenge consists of developing a simple Rest API using Django and Django Rest Framework.
-
-This exercise consists of writing a simple Django application, that has the following features in a Rest API:
-
-!(assets/models.png)
-
-A Project can have multiple Mentors through the Mentorship Model. Also,
-	a Mentor can have multiple Projects related to.
-
-
-- <strong>Models and relations</strong>. Create a model called Mentor, another one called Project, and another one called Mentorship. The models should have the following relationships(*) and fields:
+## :pencil: Description
+<details open="open">
+<summary><span>Description</span></summary>
 </details>
 
-<br>
-
-<details>
-
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-<summary> :floppy_disk: Installation</summary>
+## :floppy_disk: Installation
+
+<details open="open">
+<summary>Installation</summary>
 
 - ### Install Docker :whale:
 
@@ -88,13 +71,13 @@ A Project can have multiple Mentors through the Mentorship Model. Also,
   ```bash
   docker-compose up django-dev
   ```
+
+  ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
 </details>
-
-<br>
-
-<details>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-  <summary> :soon: Currently under develop</summary>
-</details>
+## :soon: Currently under develop
+
+- Make docker-compose service <superuser> run only by flag
