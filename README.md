@@ -31,8 +31,6 @@
 
   `DJANGO_SUPERUSER_PASSWORD`
 
-<br/>
-
 - ### Build and run container
   ```bash
   $ docker-compose build && docker-compose up
