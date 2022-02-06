@@ -16,10 +16,9 @@
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## :floppy_disk: Installation
 
 <details open="open">
-  <summary>Table of Contents</summary>
+  <summary>## :floppy_disk: Installation</summary>
 
 - ### Install Docker :whale:
 
