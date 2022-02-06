@@ -24,7 +24,7 @@ This coding challenge consists of developing a simple Rest API using Django and 
 
 This exercise consists of writing a simple Django application, that has the following features in a Rest API:
 
-!(assets/models.png)
+![](assets/models.png)
 
 A Project can have multiple Mentors through the Mentorship Model. Also,
 	a Mentor can have multiple Projects related to.
