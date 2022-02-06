@@ -13,9 +13,7 @@
 # Installation
 - ### Install Docker :whale:
   https://docs.docker.com/get-docker/
-
 <br/>
-
 - ### Environment Variables
   To run this project, you will need to add the following environment variables regarding DB mapping to your .env file:
 
@@ -34,12 +32,10 @@
   `DJANGO_SUPERUSER_PASSWORD`
 
 <br/>
-
 - ### Build and run container
   ```bash
   $ docker-compose build && docker-compose up
   ```
-
 
 # Currently under develop
 
