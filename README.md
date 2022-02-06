@@ -1,4 +1,4 @@
-<!-- TABLE OF CONTENTS -->
+<!-- TABLE OF CONTENTS 
 <details open="open">
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -13,8 +13,9 @@
 </details>
 
 <br>
+-->
 
-<details open="open">
+<details open="closed">
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -23,7 +24,7 @@
 
 <br>
 
-<details open="open">
+<details open="closed">
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -80,7 +81,7 @@
 
 <br>
 
-<details open="open">
+<details open="closed">
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
