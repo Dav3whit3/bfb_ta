@@ -8,9 +8,25 @@
 - Assumptions
 - Approach
 
+<!-- TABLE OF CONTENTS -->
+<h2 id="table-of-contents"> :book: Table of Contents</h2>
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#Description"> ➤ Description</a></li>
+    <li><a href="#Installation"> ➤ Installation</a></li>
+    <li><a href="#Currently-under-develop"> ➤ Currently under develop</a></li>
+    <li><a href="#Folder-structure"> ➤ Folder structure</a></li>
+  </ol>
+</details>
 
-# Description
-# Installation
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Description
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Installation
 - ### Install Docker :whale:
   https://docs.docker.com/get-docker/
 
@@ -34,24 +50,25 @@
 - ### Build and run container
   Build services
   ```bash
-  $ docker-compose
+  docker-compose build
   ```
 
   For a Django db migration:
   ```bash
-  $ docker-compose run db-migration
+  docker-compose run db-migration
   ```
 
   If a Django superuser is required for the first setup:
   ```bash
-  $ docker-compose run superuser
-  ```
-  
-  Launch the app:
-  ```bash
-  $ docker-compose up django-dev
+  docker-compose run superuser
   ```
 
-# Currently under develop
+  Launch the app:
+  ```bash
+  docker-compose up django-dev
+  ```
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Currently under develop
 
 - Make docker-compose service <superuser> run only by flag
