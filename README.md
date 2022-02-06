@@ -1,5 +1,10 @@
-# MentorAPI
+## Index
+- [Description](#Description)
+- [Installation](#Installation)
+- [Currently under develop](#Currently-under-develop)
+- [Folder structure](#Folder-structure)
 
-django-admin startproject mentor_rest_api .
+# Install Docker :whale:
 
-django-admin startapp restAPI
+https://docs.docker.com/get-docker/
+
