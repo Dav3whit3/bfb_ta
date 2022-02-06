@@ -21,6 +21,7 @@
 <summary><span> :pencil: Description</span></summary>
 </details>
 
+<br>
 
 <details open="open">
 
@@ -77,6 +78,7 @@
   ```
 </details>
 
+<br>
 
 <details open="open">
 
