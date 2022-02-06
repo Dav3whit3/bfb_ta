@@ -20,9 +20,9 @@
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## :floppy_disk: Installation
-<h1>
+
 <details open="open">
-<summary><span>Installation</span></summary>
+<h1><summary><span>Installation</span></summary></h1>
 
 - ### Install Docker :whale:
 
@@ -75,7 +75,7 @@
   ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 </details>
-</h1>
+
 ## :soon: Currently under develop
 
 - Make docker-compose service <superuser> run only by flag
