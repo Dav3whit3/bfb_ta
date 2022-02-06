@@ -22,7 +22,7 @@
 ## :floppy_disk: Installation
 
 <details open="open">
-<summary> </summary>
+<summary>Installation</summary>
 
 - ### Install Docker :whale:
 
@@ -75,6 +75,8 @@
   ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 </details>
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## :soon: Currently under develop
 
