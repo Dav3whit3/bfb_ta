@@ -18,7 +18,7 @@
 
 ## :floppy_disk: Installation
 
-<details open="open">
+<details open="open"> Installation
 
 - ### Install Docker :whale:
   https://docs.docker.com/get-docker/
