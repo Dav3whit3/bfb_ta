@@ -19,6 +19,7 @@
 ## :floppy_disk: Installation
 
 <details open="open">
+
 - ### Install Docker :whale:
   https://docs.docker.com/get-docker/
 
@@ -69,6 +70,7 @@
   ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 </details>
+
 ## Currently under develop
 
 - Make docker-compose service <superuser> run only by flag
