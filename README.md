@@ -50,9 +50,10 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 <summary> :floppy_disk: Installation</summary>
 
-- ## :whale: Install Docker
+- ## :whale: Install Docker & Docker Compose
 
   https://docs.docker.com/get-docker/
+  https://docs.docker.com/compose/install/
 
 
 - ## :closed_lock_with_key: Environment Variables
