@@ -74,7 +74,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   `DJANGO_SUPERUSER_PASSWORD`
 
 
-- ## Build and run container
+- ## :wrench: Build and run container
 
   Build services
 
@@ -116,7 +116,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-  <summary> Approach</summary>
+  <summary> :triangular_ruler: Approach</summary>
 </details>
 
 <br>
@@ -125,5 +125,5 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-  <summary> Blocking points</summary>
+  <summary> :cold_sweat: Blocking points</summary>
 </details>
