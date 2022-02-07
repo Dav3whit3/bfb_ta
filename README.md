@@ -119,7 +119,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 <details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)(#)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#)
 
   <summary> :cold_sweat: testing</summary>
 
