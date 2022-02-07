@@ -81,13 +81,13 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   docker-compose build
   ```
 
-  For a Django db migration:
+  (Optional) For a Django db migration:
 
   ```bash
   docker-compose run db-migration
   ```
 
-  If a Django superuser is required for the first setup:
+  (Optional) If a Django superuser is required for the first setup:
 
   ```bash
   docker-compose run superuser
@@ -112,6 +112,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   - Project Structure
   - External app architecture
   - DB models & relantionship definitions
+  - Django-seed docker-compose service setup
 </details>
 
 <br>

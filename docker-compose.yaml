@@ -20,6 +20,22 @@ services:
     depends_on:
       - db
 
+
+  # This service provides the project with a db-seed option
+  db-seed:
+    build: .
+    command: venv/bin/python manage.py seed api --number=${SIZE}
+    depends_on:
+      - db
+    environment:
+      # DB credentials to create the db
+      - POSTGRES_NAME=${POSTGRES_NAME}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      # Seed size passed thorugh docker shell
+      - SIZE
+  
+
   # This service will create a Django superuser with the credentials set on .env
   superuser:
     build: .
@@ -36,6 +52,7 @@ services:
       - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
     depends_on:
       - db
+
 
   # This is the main service Django rest API
   django-dev:
