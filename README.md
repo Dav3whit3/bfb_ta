@@ -44,7 +44,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 <details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)(#)
 
 <summary> :floppy_disk: Installation</summary>
 
@@ -104,7 +104,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 <details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)(#)
 
   <summary> :triangular_ruler: Approach</summary>
 
@@ -117,9 +117,19 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 <br>
 
+<br>
+
 <details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)(#)
+
+  <summary> :cold_sweat: testing</summary>
+
+</details>
+
+<details>
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)(#)
 
   <summary> :cold_sweat: Blocking points</summary>
 
@@ -131,7 +141,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 <details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)(#)
 
   <summary> :soon: Currently under develop</summary>
 </details>
