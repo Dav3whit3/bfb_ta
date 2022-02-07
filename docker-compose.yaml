@@ -30,7 +30,7 @@ services:
   # This service provides the project with a db-seed option
   db-seed:
     build: .
-    command: venv/bin/python manage.py seed api --number=${SIZE}
+    command: venv/bin/python manage.py seed ${DJANGO_APP} --number=${SEED_SIZE}
     depends_on:
       - db
     environment:
@@ -38,9 +38,7 @@ services:
       POSTGRES_NAME: ${POSTGRES_NAME}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      # Seed size passed thorugh docker shell
-      SIZE: 
-  
+
 
   # This service will create a Django superuser with the credentials set on .env
   superuser:

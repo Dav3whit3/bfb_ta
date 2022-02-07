@@ -81,10 +81,16 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   docker-compose build
   ```
 
+  (Optional) For a Django-app seed DJANGO_APP=<i>django_app_name</i> SEED_SIZE=<i>desired_seed_size</i> docker-compose run db-seed
+
+  ```bash
+  DJANGO_APP=mentors SEED_SIZE=1 docker-compose run db-seed
+  ```
+
   (Optional) For a Django db migration:
 
   ```bash
-  docker-compose run db-migration
+  docker-compose run db-migrations
   ```
 
   (Optional) If a Django superuser is required for the first setup:
