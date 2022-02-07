@@ -134,6 +134,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   <summary> :cold_sweat: Blocking points</summary>
 
   - Django superuser automation. Switched from Dockerfile to docker-compose for dependency order purposes
+  - Docker permissions management issues when using Docker & docker-compose. Copied folders from host drag host permissions. A chown command is required when unloading the code base into the container
 
 </details>
 

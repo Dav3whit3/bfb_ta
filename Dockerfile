@@ -6,7 +6,7 @@ RUN  apt-get update \
   # setting master user for file permmission purposes
   && useradd -m master \
   && mkdir bfb_tech_assessment \
-  && chown -R master:master /bfb_tech_assessment
+  && chown master:master -R /bfb_tech_assessment/
 
 WORKDIR /bfb_tech_assessment
 
@@ -18,4 +18,4 @@ RUN python -m venv venv \
 
 # ===== DEVELOPMENT =====
 FROM basic AS development
-COPY . .
+COPY --chown=master:master . .

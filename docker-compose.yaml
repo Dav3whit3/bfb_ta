@@ -14,12 +14,18 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
   # This service will launch a Django DB migration
-  db-migration:
+  db-migrations:
     build: .
-    command: venv/bin/python manage.py migrate
+    command: >
+      bash -c "venv/bin/python manage.py makemigrations
+      && venv/bin/python manage.py migrate"
     depends_on:
       - db
-
+    environment:
+      # DB credentials to create the db
+      POSTGRES_NAME: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
   # This service provides the project with a db-seed option
   db-seed:
@@ -70,8 +76,6 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       DEBUG:
-    volumes:
-      - ./:/bfb_ta
     depends_on:
       - db
     command: venv/bin/python3 manage.py runserver 0.0.0.0:8000
