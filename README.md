@@ -44,8 +44,8 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 <details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)(#)
-
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#installation)
+<a href="#installation"></a>
 <summary> :floppy_disk: Installation</summary>
 
 - ## :whale: Install Docker & Docker Compose
@@ -104,8 +104,8 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 <details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)(#)
-
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#aproach)
+<a href="#aproach"></a>
   <summary> :triangular_ruler: Approach</summary>
 
   Document in readme all along the process
@@ -119,8 +119,8 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 <details>
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#)
-
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#testing)
+<a href="#testing"></a>
   <summary> :cold_sweat: testing</summary>
 
 </details>
@@ -129,8 +129,8 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 <details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)(#)
-
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#bp)
+<a href="#bp"></a>
   <summary> :cold_sweat: Blocking points</summary>
 
   - Django superuser automation. Switched from Dockerfile to docker-compose for dependency order purposes
@@ -141,7 +141,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 <details>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)(#)
-
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#cud)
+<a href="#cud"></a>
   <summary> :soon: Currently under develop</summary>
 </details>
