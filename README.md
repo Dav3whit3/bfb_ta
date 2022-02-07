@@ -54,6 +54,8 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
   https://docs.docker.com/get-docker/
 
+<br>
+
 - ### :closed_lock_with_key: Environment Variables
 
   To run this project, you will need to add the following environment variables regarding DB mapping to your .env file:
@@ -71,6 +73,8 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   `DJANGO_SUPERUSER_EMAIL`
 
   `DJANGO_SUPERUSER_PASSWORD`
+
+<br>
 
 - ### Build and run container
 
