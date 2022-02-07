@@ -118,6 +118,11 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
   <summary> :triangular_ruler: Approach</summary>
+
+  Document in readme all along the process
+  - Project Structure
+  - External app architecture
+  - DB models & relantionship definitions
 </details>
 
 <br>
@@ -127,4 +132,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
   <summary> :cold_sweat: Blocking points</summary>
+
+  - Django superuser automation. Switched from Dockerfile to docker-compose for dependency order purposes
+  
 </details>
