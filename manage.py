@@ -3,8 +3,22 @@
 import os
 import sys
 
-
+from os import getenv
 def main():
+
+    # Debugger config
+    if getenv("DEBUG"):
+        print("¡¡ Initiating Debugger !!")
+        import multiprocessing
+
+        if multiprocessing.current_process().pid > 1:
+            import debugpy
+
+            debugpy.listen(("0.0.0.0", 3000))
+            print("⏳ VS Code debugger can now be attached, press F5 in VS Code ⏳", flush=True)
+            debugpy.wait_for_client()
+            print("🎉 VS Code debugger attached, enjoy debugging 🎉", flush=True)
+            
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
     try:

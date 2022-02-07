@@ -8,8 +8,6 @@ RUN  apt-get update \
   && mkdir bfb_tech_assessment \
   && chown -R master:master /bfb_tech_assessment
 
-# RUN mkdir bfb_tech_assessment && chown -R master:master /bfb_tech_assessment
-
 WORKDIR /bfb_tech_assessment
 
 USER master

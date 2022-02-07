@@ -62,12 +62,16 @@ services:
       target: development
     ports:
       - "8000:8000"
-    command: venv/bin/python3 manage.py runserver 0.0.0.0:8000
+      # debugging port:
+      - "3000:3000"
     environment:
       # DB credentials needed to connect to the db
-      - POSTGRES_NAME=${POSTGRES_NAME}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      POSTGRES_NAME: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      DEBUG:
+    volumes:
+      - ./:/bfb_ta
     depends_on:
       - db
-
+    command: venv/bin/python3 manage.py runserver 0.0.0.0:8000
