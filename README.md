@@ -34,11 +34,9 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 - <strong>Endpoints (urls.py)</strong>. Every model should have an endpoint that is accessible to make requests (create, update, delete mentors or projects).
 - <strong>Views (views.py)</strong>. Every model should have an API Rest Viewset that allows all methods but Delete.
-- <strong>Serializer (serializers.py)<strong>. Every model should have a Serializer that will return all the fields from the model and in the case of the ProjectSerializer, it should also return the array of Mentors related.
+- <strong>Serializer (serializers.py)</strong>. Every model should have a Serializer that will return all the fields from the model and in the case of the ProjectSerializer, it should also return the array of Mentors related.
 - <strong>(Optional) Admin (admin.py)</strong>. Extend the file so you can access these models and perform certain actions.
-- <strong>Optional +) Mentors Export</strong>. Add a third-party integration that enables Mentors Export in .csv from the Django Admin worked in the previous step.
-
-
+- <strong>(Optional +) Mentors Export</strong>. Add a third-party integration that enables Mentors Export in .csv from the Django Admin worked in the previous step.
 
 </details>
 
@@ -134,5 +132,5 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   <summary> :cold_sweat: Blocking points</summary>
 
   - Django superuser automation. Switched from Dockerfile to docker-compose for dependency order purposes
-  
+
 </details>
