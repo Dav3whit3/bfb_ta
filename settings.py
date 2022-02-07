@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # Third-Party Apps
     'rest_framework',
     'django_seed',
+    'rest_framework_swagger',
 
     # Custom apps
     'apps.mentors',
