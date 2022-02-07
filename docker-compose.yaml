@@ -9,9 +9,9 @@ services:
       - ./data/db:/var/lib/postgresql/data
     environment:
       # DB credentials to create the db
-      - POSTGRES_NAME=${POSTGRES_NAME}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      POSTGRES_NAME: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
   # This service will launch a Django DB migration
   db-migration:
@@ -29,11 +29,11 @@ services:
       - db
     environment:
       # DB credentials to create the db
-      - POSTGRES_NAME=${POSTGRES_NAME}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      POSTGRES_NAME: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       # Seed size passed thorugh docker shell
-      - SIZE
+      SIZE: 
   
 
   # This service will create a Django superuser with the credentials set on .env
@@ -42,14 +42,14 @@ services:
     command: venv/bin/python manage.py createsuperuser --noinput
     environment:
       # DB credentials needed to create the superuser
-      - POSTGRES_NAME=${POSTGRES_NAME}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      POSTGRES_NAME: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
       # Django ENV variables to create the superuser
-      - DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME}
-      - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL}
-      - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
+      DJANGO_SUPERUSER_USERNAME: ${DJANGO_SUPERUSER_USERNAME}
+      DJANGO_SUPERUSER_EMAIL: ${DJANGO_SUPERUSER_EMAIL}
+      DJANGO_SUPERUSER_PASSWORD: ${DJANGO_SUPERUSER_PASSWORD}
     depends_on:
       - db
 
