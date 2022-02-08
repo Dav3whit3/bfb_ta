@@ -1,7 +1,7 @@
 from django import http
 from django.shortcuts import render
-# from .models import Mentor, Project 
-# from .serializers import MentorSerializer, ProjectSerializer
+from .models import Mentor, Project 
+from .serializers import MentorSerializer, ProjectSerializer
 
 from rest_framework import viewsets
 from rest_framework import permissions
@@ -9,7 +9,7 @@ from rest_framework import permissions
 
 # Create your views here.
 
-""" 
+
 class ProjectViewSet(viewsets.ModelViewSet):
 
     # API endpoint that allows projects to be viewed or edited.
@@ -29,4 +29,3 @@ class MentorViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAdminUser]
     http_method_names = ['get', 'post', 'put', 'patch', 'head', 'options', 'trace']
 
- """
