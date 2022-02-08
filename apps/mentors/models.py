@@ -31,7 +31,7 @@ class Project(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
 
-    mentors = models.ManyToManyField(Mentor, through='Mentorship')
+    mentors = models.ManyToManyField(Mentor, related_name='projects', through='Mentorship')
 
     def __str__(self) -> str:
         return self.name
