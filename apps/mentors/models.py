@@ -13,12 +13,14 @@ STATUS_CHOICES = (
 
 # Create your models here.
 class Mentor(models.Model):
+    _id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     email = models.EmailField()
 
 
 class Project(models.Model):
+    _id  = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
    
 
