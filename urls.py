@@ -21,8 +21,8 @@ from apps.mentors import views
 
 
 router = routers.DefaultRouter()
-router.register(r'mentors', views.MentorViewSet)
-router.register(r'projects', views.ProjectViewSet)
+# router.register(r'mentors', views.MentorViewSet)
+# router.register(r'projects', views.ProjectViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
