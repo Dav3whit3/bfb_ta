@@ -25,6 +25,7 @@ class Project(models.Model):
    
 
 class Mentorship(models.Model):
+    _id  = models.AutoField(primary_key=True)
     mentorId = models.ForeignKey(Mentor, on_delete=models.CASCADE)
     projectId = models.ForeignKey(Project, on_delete=models.CASCADE)
     status = models.CharField(max_length=30, choices=STATUS_CHOICES)
