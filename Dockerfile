@@ -16,6 +16,14 @@ COPY requirements requirements
 RUN python -m venv venv \
  && venv/bin/pip install --no-cache-dir -r requirements/requirements.txt
 
-# ===== DEVELOPMENT =====
-FROM basic AS development
 COPY --chown=master:master . .
+
+# ===== DEVELOPMENT =====
+FROM basic AS setup
+
+COPY --chown=master:master boot_main_setup.sh .
+
+RUN chmod +x boot_main_setup.sh
+
+ENTRYPOINT [ "./boot_main_setup.sh" ]
+
