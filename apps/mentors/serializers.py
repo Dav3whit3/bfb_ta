@@ -1,23 +1,15 @@
-from .models import Mentor, Project, Mentorship
+from .models import Mentor, Project
 from rest_framework import serializers
 
-class MentorSerializer(serializers.HyperlinkedModelSerializer):
+
+class MentorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mentor
-        fields = ['_id', 'name', 'gender', 'email']
+        fields = '__all__'
+        
 
-
-class ProjectSerializer(serializers.HyperlinkedModelSerializer):
+class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ['_id', 'name']
-
-
-class MentorshipSerializer(serializers.HyperlinkedModelSerializer):
-    mentors = MentorSerializer(many=True)
-    projects = ProjectSerializer(many=True)
-
-    class Meta:
-        model = Mentorship
-        depth = 1
         fields = '__all__'
+        depth = 1
