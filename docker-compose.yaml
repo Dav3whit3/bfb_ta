@@ -41,7 +41,7 @@ services:
 
 
   # This service will create a Django superuser with the credentials set on .env
-  superuser:
+  create-superuser:
     build: .
     command: venv/bin/python manage.py createsuperuser --noinput
     environment:

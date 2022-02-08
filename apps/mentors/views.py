@@ -14,7 +14,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
     """
     # API endpoint that allows projects to be viewed or edited.
     """
-    queryset = Project.objects.all().order_by('_id')
+    queryset = Project.objects.all().order_by('id_project')
     serializer_class = ProjectSerializer
     permission_classes = [permissions.IsAdminUser]
     http_method_names = ['get', 'post', 'put', 'patch', 'head', 'options', 'trace']
@@ -24,7 +24,7 @@ class MentorViewSet(viewsets.ModelViewSet):
     """
     # API endpoint that allows mentors to be viewed or edited.
     """
-    queryset = Mentor.objects.all().order_by('_id')
+    queryset = Mentor.objects.all().order_by('id_mentor')
     serializer_class = MentorSerializer
     permission_classes = [permissions.IsAdminUser]
     http_method_names = ['get', 'post', 'put', 'patch', 'head', 'options', 'trace']
