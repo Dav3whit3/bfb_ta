@@ -12,27 +12,22 @@ services:
       POSTGRES_NAME: ${POSTGRES_NAME}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
-  # This service will launch a Django DB migration
+
+# This service will launch a Django DB migration
   db-migrations:
     build: .
     command: >
       bash -c "venv/bin/python manage.py makemigrations
       && venv/bin/python manage.py migrate"
     depends_on:
-      - db
-    environment:
-      # DB credentials to create the db
-      POSTGRES_NAME: ${POSTGRES_NAME}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-
-  # This service provides the project with a db-seed option
-  db-seed:
-    build: .
-    command: venv/bin/python manage.py seed ${DJANGO_APP} --number=${SEED_SIZE}
-    depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       # DB credentials to create the db
       POSTGRES_NAME: ${POSTGRES_NAME}
@@ -40,6 +35,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
 
+  #========================================================================================#
   # This service will create a Django superuser with the credentials set on .env
   create-superuser:
     build: .
@@ -54,10 +50,32 @@ services:
       DJANGO_SUPERUSER_USERNAME: ${DJANGO_SUPERUSER_USERNAME}
       DJANGO_SUPERUSER_EMAIL: ${DJANGO_SUPERUSER_EMAIL}
       DJANGO_SUPERUSER_PASSWORD: ${DJANGO_SUPERUSER_PASSWORD}
+
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+  #========================================================================================#
 
 
+  #========================================================================================#
+  # This service provides the project with a db-seed option
+  db-seed:
+    build: .
+    command: venv/bin/python manage.py seed ${DJANGO_APP} --number=${SEED_SIZE}
+
+    environment:
+      # DB credentials to create the db
+      POSTGRES_NAME: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
+  #========================================================================================#
+
+
+
+  #========================================================================================#
   # This is the main service Django rest API
   django-dev:
     restart: always
@@ -75,5 +93,8 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       DEBUG:
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+
     command: venv/bin/python3 manage.py runserver 0.0.0.0:8000
+  #========================================================================================#
