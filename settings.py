@@ -41,6 +41,7 @@ ALLOWED_HOSTS = []
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
     'PAGE_SIZE': 10
 }
 
@@ -57,7 +58,9 @@ INSTALLED_APPS = [
     # Third-Party Apps
     'rest_framework',
     'django_seed',
-    'rest_framework_swagger',
+
+    # 'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
+    'drf_yasg',
 
     # Custom apps
     'apps.mentors',
