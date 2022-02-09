@@ -6,7 +6,15 @@ venv/bin/python manage.py migrate
 
 venv/bin/python manage.py createsuperuser --noinput
 
-venv/bin/python manage.py seed ${DJANGO_APP} --number=${SEED_SIZE}
+
+# [[ -n $SEED_SIZE ]] && venv/bin/python manage.py seed ${DJANGO_APP} --number=${SEED_SIZE}
+
+if [[ -n $SEED_SIZE ]]
+ then
+  venv/bin/python manage.py seed ${DJANGO_APP} --number=${SEED_SIZE}
+ else
+  echo "No seed config setup"
+fi
 
 echo "🎉 Starting Django Server ! 🎉"
 echo "You can access it at http://localhost:8000/ !"
