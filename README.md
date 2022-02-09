@@ -154,5 +154,6 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   <summary> :soon: Currently under develop</summary>
 
   - Mock a Prod / Dev setup with different docker-compose services point to differente data bases.
+  - Create a more representative seed to be fed to db models eg JSON
 
 </details>

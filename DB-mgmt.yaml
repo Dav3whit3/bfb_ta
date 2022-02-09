@@ -1,7 +1,6 @@
 version: '3.6'
 
 services:
-
   # This service will launch a postgress DB. The serive name <db> is expected by django default db name.
   db:
     image: postgres
@@ -18,61 +17,57 @@ services:
       timeout: 5s
       retries: 5
 
-
-  ######## ======== Main setup container ======== ########
-  setup:
-    restart: always
-    build:
-      context: .
-      target: setup
+  
+  # This service will launch a Django DB migration
+  db-migrations:
+    build: .
+    command: >
+      bash -c "venv/bin/python manage.py makemigrations
+      && venv/bin/python manage.py migrate"
     depends_on:
       db:
         condition: service_healthy
+    environment:
+      # DB credentials to create the db
+      POSTGRES_NAME: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+
+  #========================================================================================#
+  # This service will create a Django superuser with the credentials set on .env
+  create-superuser:
+    build: .
+    command: venv/bin/python manage.py createsuperuser --noinput
     environment:
       # DB credentials needed to create the superuser
       POSTGRES_NAME: ${POSTGRES_NAME}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
-      # ENV variables expected by Django to create a superuser
+      # Django ENV variables to create the superuser
       DJANGO_SUPERUSER_USERNAME: ${DJANGO_SUPERUSER_USERNAME}
       DJANGO_SUPERUSER_EMAIL: ${DJANGO_SUPERUSER_EMAIL}
       DJANGO_SUPERUSER_PASSWORD: ${DJANGO_SUPERUSER_PASSWORD}
 
-      # ENV variables for seeding db models
-      DJANGO_APP: ${DJANGO_APP}
-      SEED_SIZE: ${SEED_SIZE}
-    ports:
-      - "8000:8000"
-      # debugging port:
-      - "3000:3000"
-  #############################################################
-
-
-
-  #========================================================================================#
-  # This is the main service Django rest API
-  django-dev:
-    restart: always
-    build:
-      context: .
-      target: django-dev
-    ports:
-      - "8000:8000"
-      # debugging port:
-      - "3000:3000"
-    environment:
-      # DB credentials needed to connect to the db
-      POSTGRES_NAME: ${POSTGRES_NAME}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      DEBUG:
     depends_on:
       db:
         condition: service_healthy
+  #========================================================================================#
 
-    command: >
-      bash -c "echo '🎉 Starting Django Server ! 🎉'
-      && echo 'You can access it at http://localhost:8000/ !'
-      && venv/bin/python3 manage.py runserver 0.0.0.0:8000"
+
+  #========================================================================================#
+  # This service provides the project with a db-seed option
+  db-seed:
+    build: .
+    command: venv/bin/python manage.py seed ${DJANGO_APP} --number=${SEED_SIZE}
+
+    environment:
+      # DB credentials to create the db
+      POSTGRES_NAME: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
   #========================================================================================#
