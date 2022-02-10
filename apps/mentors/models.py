@@ -22,7 +22,6 @@ class Mentor(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     email = models.EmailField()
 
-
     def __str__(self) -> str:
         return self.name
 

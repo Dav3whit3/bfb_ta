@@ -73,6 +73,7 @@ services:
 
     command: >
       bash -c "echo '🎉 Starting Django Server ! 🎉'
-      && echo 'You can access it at http://localhost:8000/ !'
+      && venv/bin/python3 manage.py collectstatic --noinput
+      && echo 'You can access it at http://localhost:8000 !'
       && venv/bin/python3 manage.py runserver 0.0.0.0:8000"
   #========================================================================================#
