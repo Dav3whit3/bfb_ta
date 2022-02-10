@@ -8,19 +8,26 @@ class MentorshipSerializer(serializers.ModelSerializer):
         model = Mentorship
         fields = '__all__'
 
-      
+
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = '__all__'
+        fields = ['id', 'name', 'mentors']
         depth = 1
+
+
+# This extra Serializer will only serve to be nested in Mentors'
+# responses and not show again an unnecesary "mentors" field inside
+class NestedProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Project
+        fields = ['id', 'name',]
 
 
 class MentorSerializer(serializers.ModelSerializer):
     
-    projects = ProjectSerializer(many=True, read_only=True)
+    projects = NestedProjectSerializer(many=True, read_only=True)
 
     class Meta:
         model = Mentor
-        fields = '__all__'
-        depth = 1
+        fields = ['id', 'name', 'gender', 'email', 'projects']

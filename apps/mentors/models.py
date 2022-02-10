@@ -35,6 +35,9 @@ class Project(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    def get_reps(self):
+        return [p.name for p in self.mentors.all()]
+
 
 class Mentorship(models.Model):
     id = models.AutoField(primary_key=True)

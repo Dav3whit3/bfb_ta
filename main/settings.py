@@ -60,7 +60,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_seed',
     'import_export',
-    # 'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
     'drf_yasg',
 
     # Custom apps
