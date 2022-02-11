@@ -1,9 +1,8 @@
 version: '3.6'
 
 services:
-
-  # This service will launch a postgress DB. The serive name <db> is expected by django default db name.
-  db:
+  ######## ======== This service will launch a postgress DB.======== ########
+  db: # The serive name <db> is expected by django default db name.
     image: postgres
     volumes:
       - ./data/db:/var/lib/postgresql/data
@@ -19,15 +18,21 @@ services:
       retries: 5
 
 
+
   ######## ======== Main setup container ======== ########
-  setup:
-    restart: always
+  first-setup:
+    depends_on:
+    db:
+      condition: service_healthy
     build:
       context: .
-      target: setup
-    depends_on:
-      db:
-        condition: service_healthy
+      target: first-setup
+    ports:
+      - "8000:8000"
+      # debugging port:
+      - "3000:3000"
+    restart: always
+    tty: true            
     environment:
       # DB credentials needed to create the superuser
       POSTGRES_NAME: ${POSTGRES_NAME}
@@ -42,42 +47,28 @@ services:
       # ENV variables for seeding db models
       DJANGO_APP: ${DJANGO_APP}
       SEED_SIZE: ${SEED_SIZE}
-    ports:
-      - "8000:8000"
-      # debugging port:
-      - "3000:3000"
-  #############################################################
 
 
 
-  #========================================================================================#
-  # This is the main service Django rest API
+  ######## ======== This is the main service Django rest API ======== ########
   django-dev:
-    restart: always
-    tty: true
+    depends_on:
+    db:
+      condition: service_healthy
     build:
       context: .
       target: django-dev
+    restart: always
+    tty: true
     ports:
       - "8000:8000"
       # debugging port:
       - "3000:3000"
+    volumes:
+      - ./apps:/code/apps
     environment:
       # DB credentials needed to connect to the db
       POSTGRES_NAME: ${POSTGRES_NAME}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       DEBUG:
-    depends_on:
-      db:
-        condition: service_healthy
-
-    volumes:
-      - ./apps:/code/apps
-
-    command: >
-      bash -c "echo '🎉 Starting Django Server ! 🎉'
-      && venv/bin/python3 manage.py collectstatic --noinput
-      && echo 'You can access it at http://localhost:8000 !'
-      && venv/bin/python3 manage.py runserver 0.0.0.0:8000"
-  #========================================================================================#

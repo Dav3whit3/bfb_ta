@@ -9,4 +9,4 @@ docker-compose build
 echo "Starting DB. Please wait..."
 docker-compose up --build -d db
 
-docker-compose up setup
+docker-compose up first-setup

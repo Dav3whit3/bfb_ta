@@ -21,7 +21,7 @@ RUN python -m venv venv \
 
 
 # ===== SETUP =====
-FROM basic AS setup
+FROM basic AS first-setup
 
 RUN chmod +x boot/boot_main_setup.sh
 
@@ -29,17 +29,11 @@ ENTRYPOINT [ "./boot/boot_main_setup.sh" ]
 
 
 
-# ===== DEV =====
-#FROM basic AS django-dev
-
-# COPY --chown=master:master ./boot/start.sh .
-
-# RUN chmod +x start.sh
-
-# ENTRYPOINT [ "./start.sh" ]
-
 
 
 # ===== DEVELOPMENT =====
 FROM basic AS django-dev
-COPY --chown=master:master . .
+
+RUN chmod +x boot/boot_start.sh
+
+ENTRYPOINT [ "./boot/boot_start.sh" ]
