@@ -1,29 +1,29 @@
 FROM python:3.8-slim-buster as basic
 
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 RUN  apt-get update \
   && python -m pip install --upgrade pip \
   # setting master user for file permmission purposes
-  && useradd -m master \
-  && mkdir bfb_tech_assessment \
-  && chown master:master -R /bfb_tech_assessment/
+  && useradd -m master 
 
-WORKDIR /bfb_tech_assessment
+WORKDIR /code
+
+RUN chown master:master -R /code/
 
 USER master
 
-COPY requirements requirements
+COPY --chown=master:master . /code/
+
 RUN python -m venv venv \
  && venv/bin/pip install --no-cache-dir -r requirements/requirements.txt
 
-COPY --chown=master:master . .
 
 # ===== SETUP =====
 FROM basic AS setup
 
-COPY --chown=master:master ./boot/boot_main_setup.sh .
-
-RUN chmod +x boot_main_setup.sh
+RUN chmod +x boot/boot_main_setup.sh
 
 ENTRYPOINT [ "./boot_main_setup.sh" ]
 

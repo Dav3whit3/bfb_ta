@@ -54,6 +54,7 @@ services:
   # This is the main service Django rest API
   django-dev:
     restart: always
+    tty: true
     build:
       context: .
       target: django-dev
@@ -70,6 +71,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
+
+    volumes:
+      - ./apps:/code/apps
 
     command: >
       bash -c "echo '🎉 Starting Django Server ! 🎉'
