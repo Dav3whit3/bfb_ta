@@ -96,7 +96,8 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   (Optional) For a Django db migration:  
   
   ```bash
-  docker-compose -f DB-mgmt.yaml build db-migrations && docker-compose -f DB-mgmt.yaml run db-migrations
+  docker-compose -f DB-mgmt.yaml build db-migrations &&
+  docker-compose -f DB-mgmt.yaml run db-migrations
   ```
 
   (Optional) If a Django superuser is required for the first setup:  
