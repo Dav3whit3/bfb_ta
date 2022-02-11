@@ -1,11 +1,16 @@
 #!/bin/bash
 
+echo '🎉 Making DB migrations ! 🎉'
 venv/bin/python manage.py makemigrations
 
+echo '🎉 Migrating DB! 🎉'
 venv/bin/python manage.py migrate
 
+echo '🎉 Creating ADMIN superuser ! 🎉'
 venv/bin/python manage.py createsuperuser --noinput
 
+echo '🎉 Collecting Statistics for django_import_export ! 🎉'
+venv/bin/python3 manage.py collectstatic --noinput
 
 # [[ -n $SEED_SIZE ]] && venv/bin/python manage.py seed ${DJANGO_APP} --number=${SEED_SIZE}
 

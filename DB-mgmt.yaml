@@ -1,32 +1,12 @@
 version: '3.6'
 
-services:
-  # This service will launch a postgress DB. The serive name <db> is expected by django default db name.
-  db:
-    image: postgres
-    volumes:
-      - ./data/db:/var/lib/postgresql/data
-    environment:
-      # DB credentials to create the db
-      POSTGRES_NAME: ${POSTGRES_NAME}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-
-  
+services: 
   # This service will launch a Django DB migration
   db-migrations:
     build: .
     command: >
       bash -c "venv/bin/python manage.py makemigrations
       && venv/bin/python manage.py migrate"
-    depends_on:
-      db:
-        condition: service_healthy
     environment:
       # DB credentials to create the db
       POSTGRES_NAME: ${POSTGRES_NAME}
@@ -49,10 +29,6 @@ services:
       DJANGO_SUPERUSER_USERNAME: ${DJANGO_SUPERUSER_USERNAME}
       DJANGO_SUPERUSER_EMAIL: ${DJANGO_SUPERUSER_EMAIL}
       DJANGO_SUPERUSER_PASSWORD: ${DJANGO_SUPERUSER_PASSWORD}
-
-    depends_on:
-      db:
-        condition: service_healthy
   #========================================================================================#
 
 
@@ -67,7 +43,4 @@ services:
       POSTGRES_NAME: ${POSTGRES_NAME}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    depends_on:
-      db:
-        condition: service_healthy
   #========================================================================================#

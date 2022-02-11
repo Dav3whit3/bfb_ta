@@ -25,7 +25,7 @@ FROM basic AS setup
 
 RUN chmod +x boot/boot_main_setup.sh
 
-ENTRYPOINT [ "./boot_main_setup.sh" ]
+ENTRYPOINT [ "./boot/boot_main_setup.sh" ]
 
 
 
