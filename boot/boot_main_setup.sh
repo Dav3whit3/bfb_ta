@@ -10,7 +10,7 @@ echo '🎉 Creating ADMIN superuser ! 🎉'
 venv/bin/python manage.py createsuperuser --noinput
 
 echo '🎉 Collecting Statistics for django_import_export ! 🎉'
-venv/bin/python3 manage.py collectstatic --noinput
+venv/bin/python manage.py collectstatic --noinput
 
 # [[ -n $SEED_SIZE ]] && venv/bin/python manage.py seed ${DJANGO_APP} --number=${SEED_SIZE}
 
@@ -22,4 +22,4 @@ if [[ -n $SEED_SIZE ]]
 fi
 
 echo "🎉 Starting Django Server ! 🎉"
-exec venv/bin/python3 manage.py runserver 0.0.0.0:8000
+exec venv/bin/python manage.py runserver 0.0.0.0:8000

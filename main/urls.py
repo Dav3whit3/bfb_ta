@@ -40,16 +40,17 @@ router.register(r'mentors', views.MentorViewSet)
 router.register(r'projects', views.ProjectViewSet)
 
 
-
 urlpatterns = [
 
-    re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
-    re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+
+    # re_path(r'^swagger(?P<format>\.json|\.yaml)$',
+    #        schema_view.without_ui(cache_timeout=0), name='schema-json'),
+
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+                                              
+    path('redoc', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
-
-

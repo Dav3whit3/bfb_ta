@@ -1,7 +1,7 @@
 from django import http
 from django.shortcuts import render
-from .models import Mentor, Project 
-from .serializers import MentorSerializer, ProjectSerializer
+from .models import Mentor, Project , Mentorship
+from .serializers import MentorSerializer, ProjectSerializer, MentorshipSerializer
 
 from rest_framework import viewsets
 from rest_framework import permissions
@@ -29,3 +29,12 @@ class MentorViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAdminUser]
     http_method_names = ['get', 'post', 'put', 'patch', 'head', 'options', 'trace']
 
+
+class MentorshipViewSet(viewsets.ModelViewSet):
+
+    # API endpoint that allows mentors to be viewed or edited.
+
+    queryset = Mentorship.objects.all().order_by('id')
+    serializer_class = MentorshipSerializer
+    permission_classes = [permissions.IsAdminUser]
+    http_method_names = ['get', 'post', 'put', 'patch', 'head', 'options', 'trace']
