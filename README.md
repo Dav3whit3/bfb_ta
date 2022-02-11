@@ -72,13 +72,14 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
   `DJANGO_SUPERUSER_PASSWORD`
 
-
   `DJANGO_SECRET_KEY`
 
   <br/> A Boolean value for debugging session:
+
   `DEBUG`
 
   <br/>django app name and size number to perform DB model seeding:
+  
   `DJANGO_APP`
 
   `SEED_SIZE`
