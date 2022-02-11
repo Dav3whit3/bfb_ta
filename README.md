@@ -73,6 +73,17 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   `DJANGO_SUPERUSER_PASSWORD`
 
 
+  `DJANGO_SECRET_KEY`
+
+  <br/> A Boolean value for debugging session:
+  `DEBUG`
+
+  <br/>django app name and size number to perform DB model seeding:
+  `DJANGO_APP`
+
+  `SEED_SIZE`
+
+
 - ## :wrench: Build and run container
 
   The first setup should use the <i>setup</i> script, which will build the Postgres server, make the first Db migrations for Django and create an Admin Superuser. During this setup a DB-model-seed option is enabled and can be used by setting a SEED_SIZE variable before executing the script. (ex: <i>SEED_SIZE=10 sh setup.sh</i>)
