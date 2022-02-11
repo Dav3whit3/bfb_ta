@@ -107,13 +107,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   (Optional) If a Django superuser is required for the first setup:
 
   ```bash
-  docker-compose run superuser
-  ```
-
-  Launch the app:
-
-  ```bash
-  docker-compose up django-dev
+  docker-compose run -f DB-mgmt.yaml superuser
   ```
 </details>
 
