@@ -27,12 +27,14 @@ services:
     build:
       context: .
       target: first-setup
+    restart: always
+    tty: true         
     ports:
       - "8000:8000"
       # debugging port:
       - "3000:3000"
-    restart: always
-    tty: true            
+    volumes:
+      - ./apps:/code/apps           
     environment:
       # DB credentials needed to create the superuser
       POSTGRES_NAME: ${POSTGRES_NAME}

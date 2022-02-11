@@ -20,7 +20,7 @@ class Mentor(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
 
     def __str__(self) -> str:
         return self.name

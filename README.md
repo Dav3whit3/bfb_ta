@@ -1,20 +1,3 @@
-<!-- TABLE OF CONTENTS 
-<details open="open">
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
-  <summary> :book: Table of Contents</summary>
-  <ol>
-    <li><a href="#Description"> ➤ Description</a></li>
-    <li><a href="#Installation"> ➤ Installation</a></li>
-    <li><a href="#Currently-under-develop"> ➤ Currently under develop</a></li>
-    <li><a href="#Folder-structure"> ➤ Folder structure</a></li>
-  </ol>
-</details>
-
-<br>
--->
-
 <details>
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#description)
@@ -113,7 +96,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   (Optional) For a Django db migration:  
   
   ```bash
-  docker-compose run -f DB-mgmt.yaml db-migrations
+  docker-compose -f DB-mgmt.yaml build db-migrations && docker-compose -f DB-mgmt.yaml run db-migrations
   ```
 
   (Optional) If a Django superuser is required for the first setup:  

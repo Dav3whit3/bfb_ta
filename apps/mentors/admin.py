@@ -5,13 +5,27 @@ from import_export.admin import ExportMixin, ImportExportMixin
 from import_export import resources, fields
 from import_export.widgets import ManyToManyWidget
 
+admin.site.site_header = 'Mentor-Project Admin'
+
 # Register your models here.
+
+class MentorAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'gender', 'email']
+    list_filter = ['gender']
+
+
+
+
+
+
+
+
+
 
 """ class MentorResource(
     ExportMixin,
     admin.ModelAdmin
 ): """
-
 
 
 class MentorResource(ExportMixin,
@@ -27,6 +41,6 @@ class MentorResource(ExportMixin,
 
 
 
-admin.site.register(Mentor, MentorResource)
+admin.site.register(Mentor, MentorAdmin)
 admin.site.register(Project,)
 admin.site.register(Mentorship)
