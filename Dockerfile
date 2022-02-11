@@ -20,14 +20,14 @@ RUN python -m venv venv \
  && venv/bin/pip install --no-cache-dir -r requirements/requirements.txt
 
 
+
+
 # ===== SETUP =====
 FROM basic AS first-setup
 
 RUN chmod +x boot/boot_main_setup.sh
 
 ENTRYPOINT [ "./boot/boot_main_setup.sh" ]
-
-
 
 
 

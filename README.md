@@ -75,22 +75,33 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 - ## :wrench: Build and run container
 
-  Build services
+  The first setup should use the <i>setup</i> script, which will build the Postgres server, make the first Db migrations for Django and create an Admin Superuser. During this setup a DB-model-seed option is enabled and can be used by setting a SEED_SIZE variable before executing the script. (ex: <i>SEED_SIZE=10 sh setup.sh</i>)
 
   ```bash
-  docker-compose build
+  sh setup.sh
   ```
 
-  (Optional) For a Django-app seed :arrow_right: <i>DJANGO_APP=<strong>django_app_name</strong> SEED_SIZE=<strong>desired_seed_size</strong> docker-compose run db-seed:</i>
+  Following accesses to the Django server may just use the <i>start</i> script.
 
   ```bash
-  DJANGO_APP=mentors SEED_SIZE=10 docker-compose run db-seed
+  sh start.sh
+  ```
+
+  Or enabling the Debugging session by setting a boolean variable:
+  ```bash
+  DEBUG=1 sh start.sh
+  ```
+
+  (Optional) For a Django-app seed :arrow_right: <i>DJANGO_APP=<strong>django_app_name</strong> SEED_SIZE=<strong>desired_seed_size</strong> docker-compose -f DB-mgmt.yaml run db-seed:</i>
+
+  ```bash
+  DJANGO_APP=mentors SEED_SIZE=10 docker-compose -f DB-mgmt.yaml run db-seed
   ```
 
   (Optional) For a Django db migration:
 
   ```bash
-  docker-compose run db-migrations
+  docker-compose run -f DB-mgmt.yaml db-migrations
   ```
 
   (Optional) If a Django superuser is required for the first setup:
