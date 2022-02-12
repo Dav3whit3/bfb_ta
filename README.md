@@ -106,7 +106,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   
   ```bash
   docker-compose -f DB-mgmt.yaml build superuser &&
-  docker-compose run -f DB-mgmt.yaml superuser
+  docker-compose -f DB-mgmt.yaml run superuser
   ```
 </details>
 
@@ -118,11 +118,10 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 <a href="#aproach"></a>
   <summary> :triangular_ruler: Approach</summary>
 
-  Document in readme all along the process
-  - Project Structure
-  - External app architecture
-  - DB models & relantionship definitions
-  - Django-seed docker-compose service setup
+  - Marke it work locally :arrow_right: Dockerize it 
+  - Document readme at each commit made
+  - External app architecture. Abstract docker commands into bash scripts
+  - Clear folder structure
 </details>
 
 <br>
@@ -145,7 +144,8 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
   - Django superuser automation. Switched from Dockerfile to docker-compose for dependency order purposes
   - Docker permissions management issues when using Docker & docker-compose. Copied folders from host drag host permissions. A chown command is required when unloading the code base into the container
-  - Many to Many reversed relationship
+  - Many to Many reversed relationship. Related_name attribute on manytomany field
+  - Django import_export populate reverse many to many field. Solution is around library's relationship widgets / dehydrate_'atribute name'
 
 </details>
 
