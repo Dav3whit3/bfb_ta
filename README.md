@@ -2,10 +2,11 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#description)
 <a href="#description"></a>
+
 <summary><span> :pencil: Description</span></summary>
 This coding challenge consists of developing a simple Rest API using Django and Django Rest Framework. The exercise consists of writing a simple Django application, that has the following features in a Rest API:
 
-- <strong>Models and relations</strong>. Create a model called Mentor, another one called Project, and another one called Mentorship. The models should have the following relationships(*) and fields:
+- <strong>Models and relations</strong>. Create a model called Mentor, another one called Project, and another one called Mentorship. The models should have the following relationships(\*) and fields:
 
 <div align="center">
 
@@ -29,13 +30,13 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#installation)
 <a href="#installation"></a>
+
 <summary> :floppy_disk: Installation</summary>
 
 - ## :whale: Install Docker & Docker Compose
 
   https://docs.docker.com/get-docker/  
   https://docs.docker.com/compose/install/
-
 
 - ## :closed_lock_with_key: Environment Variables
 
@@ -62,11 +63,10 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   `DEBUG`
 
   <br/>django app name and size number to perform DB model seeding:
-  
+
   `DJANGO_APP`
 
   `SEED_SIZE`
-
 
 - ## :wrench: Build and run container
 
@@ -82,33 +82,35 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
   sh start.sh
   ```
 
-  Or enabling the Debugging session by setting a boolean variable:  
+  Or enabling the Debugging session by setting a boolean variable:
+
   ```bash
   DEBUG=1 sh start.sh
   ```
 
-  (Optional) For a Django-app seed :arrow_right: <i>DJANGO_APP=<strong>django_app_name</strong> SEED_SIZE=<strong>desired_seed_size</strong> docker-compose -f DB-mgmt.yaml run db-seed:</i>  
-  
+  (Optional) For a Django-app seed :arrow_right: <i>DJANGO_APP=<strong>django_app_name</strong> SEED_SIZE=<strong>desired_seed_size</strong> docker-compose -f docker-compose-actions.yaml run db-seed:</i>
+
   ```bash
   DJANGO_APP=mentors SEED_SIZE=10 &&
-  docker-compose -f DB-mgmt.yaml build db-seed &&
-  docker-compose -f DB-mgmt.yaml run db-seed
+  docker-compose -f docker-compose-actions.yaml build db-seed &&
+  docker-compose -f docker-compose-actions.yaml run db-seed
   ```
 
-  (Optional) For a Django db migration:  
-  
+  (Optional) For a Django db migration:
+
   ```bash
-  docker-compose -f DB-mgmt.yaml build db-migrations &&
-  docker-compose -f DB-mgmt.yaml run db-migrations
+  docker-compose -f docker-compose-actions.yaml build db-migrations &&
+  docker-compose -f docker-compose-actions.yaml run db-migrations
   ```
 
-  (Optional) If a Django superuser is required for the first setup:  
-  
+  (Optional) If a Django superuser is required for the first setup:
+
   ```bash
-  docker-compose -f DB-mgmt.yaml build superuser &&
-  docker-compose -f DB-mgmt.yaml run superuser
+  docker-compose -f docker-compose-actions.yaml build superuser &&
+  docker-compose -f docker-compose-actions.yaml run superuser
   ```
-</details>
+
+  </details>
 
 <br>
 
@@ -116,12 +118,13 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#aproach)
 <a href="#aproach"></a>
+
   <summary> :triangular_ruler: Approach</summary>
 
-  - Marke it work locally :arrow_right: Dockerize it 
-  - Document readme at each commit made
-  - External app architecture. Abstract docker commands into bash scripts
-  - Clear folder structure
+- Marke it work locally :arrow_right: Dockerize it
+- Document readme at each commit made
+- External app architecture. Abstract docker commands into bash scripts
+- Clear folder structure
 </details>
 
 <br>
@@ -130,6 +133,7 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#testing)
 <a href="#testing"></a>
+
   <summary> :microscope: Testing</summary>
 
 </details>
@@ -140,12 +144,13 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#bp)
 <a href="#bp"></a>
+
   <summary> :cold_sweat: Blocking points</summary>
 
-  - Django superuser automation. Switched from Dockerfile to docker-compose for dependency order purposes
-  - Docker permissions management issues when using Docker & docker-compose. Copied folders from host drag host permissions. A chown command is required when unloading the code base into the container
-  - Many to Many reversed relationship. Related_name attribute on manytomany field
-  - Django import_export populate reverse many to many field. Solution is around library's relationship widgets / dehydrate_'atribute name'
+- Django superuser automation. Switched from Dockerfile to docker-compose for dependency order purposes
+- Docker permissions management issues when using Docker & docker-compose. Copied folders from host drag host permissions. A chown command is required when unloading the code base into the container
+- Many to Many reversed relationship. Related_name attribute on manytomany field
+- Django import*export populate reverse many to many field. Solution is around library's relationship widgets / dehydrate*'atribute name'
 
 </details>
 
@@ -155,9 +160,10 @@ A Project can have multiple Mentors through the Mentorship Model. Also, a Mentor
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#cud)
 <a href="#cud"></a>
+
   <summary> :soon: Currently under develop</summary>
 
-  - Mock a Prod / Dev setup with different docker-compose services point to differente data bases.
-  - Create a more representative seed to be fed to db models eg JSON
+- Mock a Prod / Dev setup with different docker-compose services point to differente data bases.
+- Create a more representative seed to be fed to db models eg JSON
 
 </details>
