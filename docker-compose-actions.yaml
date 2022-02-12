@@ -1,0 +1,45 @@
+version: '3.6'
+
+services:
+  # This service will launch a Django DB migration
+  db-migrations:
+    build:
+      context: .
+      target: db-migrations
+
+    environment:
+      # DB credentials to create the db
+      POSTGRES_NAME: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+
+  #========================================================================================#
+  # This service will create a Django superuser with the credentials set on .env
+  create-superuser:
+    build: .
+    environment:
+      # DB credentials needed to create the superuser
+      POSTGRES_NAME: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+      # Django ENV variables to create the superuser
+      DJANGO_SUPERUSER_USERNAME: ${DJANGO_SUPERUSER_USERNAME}
+      DJANGO_SUPERUSER_EMAIL: ${DJANGO_SUPERUSER_EMAIL}
+      DJANGO_SUPERUSER_PASSWORD: ${DJANGO_SUPERUSER_PASSWORD}
+    command: venv/bin/python manage.py createsuperuser --noinput
+  #========================================================================================#
+
+
+  #========================================================================================#
+  # This service provides the project with a db-seed option
+  db-seed:
+    build: .
+    environment:
+      # DB credentials to create the db
+      POSTGRES_NAME: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    command: venv/bin/python manage.py seed ${DJANGO_APP} --number=${SEED_SIZE}
+  #========================================================================================#
