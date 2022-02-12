@@ -3,6 +3,6 @@ docker-compose stop
 
 docker-compose down --remove-orphans
 
-docker-compose build
+docker-compose build --remove-orphans
 
-docker-compose up --build django-dev
+docker-compose up --build django-dev --remove-orphans

@@ -1,7 +1,7 @@
 from django import http
 from django.shortcuts import render
 from .models import Mentor, Project , Mentorship
-from .serializers import MentorSerializer, ProjectSerializer, MentorshipSerializer
+from .serializers import MentorSerializer, ProjectSerializer, MentorshipSerializer, NestedProjectSerializer
 
 from rest_framework import viewsets
 from rest_framework import permissions
@@ -38,3 +38,4 @@ class MentorshipViewSet(viewsets.ModelViewSet):
     serializer_class = MentorshipSerializer
     permission_classes = [permissions.IsAdminUser]
     http_method_names = ['get', 'post', 'put', 'patch', 'head', 'options', 'trace']
+

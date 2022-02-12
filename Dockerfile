@@ -37,3 +37,12 @@ FROM basic AS django-dev
 RUN chmod +x boot/boot_start.sh
 
 ENTRYPOINT [ "./boot/boot_start.sh" ]
+
+
+
+# ===== db-migrations =====
+FROM basic AS db-migrations
+
+RUN chmod +x boot/db_migrations.sh
+
+ENTRYPOINT [ "./boot/db_migrations.sh" ]

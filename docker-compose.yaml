@@ -4,6 +4,8 @@ services:
   ######## ======== This service will launch a postgress DB.======== ########
   db: # The serive name <db> is expected by django default db name.
     image: postgres
+    restart: always
+    tty: true   
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
@@ -11,6 +13,7 @@ services:
       POSTGRES_NAME: ${POSTGRES_NAME}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s

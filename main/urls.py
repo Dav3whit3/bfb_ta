@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path, re_path
 from rest_framework import routers, permissions
+from django.contrib.auth.decorators import login_required
 
 from apps.mentors import views
 
@@ -32,12 +33,13 @@ schema_view = get_schema_view(
         license=openapi.License(name="BSD License"),
     ),
     public=True,
-    permission_classes=[permissions.AllowAny],
+    permission_classes=[permissions.IsAdminUser],
 )
 
 router = routers.DefaultRouter()
 router.register(r'mentors', views.MentorViewSet)
 router.register(r'projects', views.ProjectViewSet)
+router.register(r'mentorship', views.MentorshipViewSet)
 
 
 urlpatterns = [
@@ -46,9 +48,9 @@ urlpatterns = [
     # re_path(r'^swagger(?P<format>\.json|\.yaml)$',
     #        schema_view.without_ui(cache_timeout=0), name='schema-json'),
 
-    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('', login_required(schema_view.with_ui('swagger', cache_timeout=0)), name='schema-swagger-ui'),
                                               
-    path('redoc', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('redoc', login_required(schema_view.with_ui('redoc', cache_timeout=0)), name='schema-redoc'),
 
     path('admin/', admin.site.urls),
     path('', include(router.urls)),

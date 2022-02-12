@@ -42,5 +42,5 @@ class MentorResource(ExportMixin,
 
 
 admin.site.register(Mentor, MentorAdmin)
-admin.site.register(Project,)
+admin.site.register(Project)
 admin.site.register(Mentorship)
