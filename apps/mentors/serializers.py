@@ -26,6 +26,8 @@ class NestedProjectSerializer(serializers.ModelSerializer):
 
 class MentorSerializer(serializers.ModelSerializer):
     
+    # This serializer uses NestedProjectSerializer
+    # to reverse-populate "projects" many-to-many field
     projects = NestedProjectSerializer(many=True, read_only=True)
 
     class Meta:
