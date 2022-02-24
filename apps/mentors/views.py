@@ -3,8 +3,7 @@ from django.shortcuts import render
 from .models import Mentor, Project , Mentorship
 from .serializers import MentorSerializer, ProjectSerializer, MentorshipSerializer, NestedProjectSerializer
 
-from rest_framework import viewsets
-from rest_framework import permissions
+from rest_framework import viewsets, permissions
 
 
 # Create your views here.

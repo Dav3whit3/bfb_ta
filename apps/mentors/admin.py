@@ -16,12 +16,6 @@ class MentorAdmin(admin.ModelAdmin):
 
 
 
-
-
-
-
-
-
 """ class MentorResource(
     ExportMixin,
     admin.ModelAdmin

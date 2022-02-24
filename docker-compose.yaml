@@ -37,7 +37,8 @@ services:
       # debugging port:
       - "3000:3000"
     volumes:
-      - ./apps:/code/apps           
+      - ./apps:/code/apps
+      - ./main:/code/main
     environment:
       # DB credentials needed to create the superuser
       POSTGRES_NAME: ${POSTGRES_NAME}
@@ -71,6 +72,7 @@ services:
       - "3000:3000"
     volumes:
       - ./apps:/code/apps
+      - ./main:/code/main
     environment:
       # DB credentials needed to connect to the db
       POSTGRES_NAME: ${POSTGRES_NAME}

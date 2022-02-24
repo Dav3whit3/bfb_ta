@@ -25,6 +25,7 @@ RUN python -m venv venv \
 # ===== SETUP =====
 FROM basic AS first-setup
 
+# Change file permmissions as during COPY cmd container files permmissions are replicated from hosts'
 RUN chmod +x boot/boot_main_setup.sh
 
 ENTRYPOINT [ "./boot/boot_main_setup.sh" ]
