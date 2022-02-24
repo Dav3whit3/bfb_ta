@@ -9,7 +9,7 @@ venv/bin/python manage.py migrate
 echo '🎉 Creating ADMIN superuser ! 🎉'
 venv/bin/python manage.py createsuperuser --noinput
 
-echo '🎉 Collecting Statistics for django_import_export ! 🎉'
+echo '🎉 Collecting static for django_import_export ! 🎉'
 venv/bin/python manage.py collectstatic --noinput
 
 # [[ -n $SEED_SIZE ]] && venv/bin/python manage.py seed ${DJANGO_APP} --number=${SEED_SIZE}

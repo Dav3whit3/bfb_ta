@@ -15,7 +15,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
     queryset = Project.objects.all().order_by('id')
     serializer_class = ProjectSerializer
-    permission_classes = [permissions.IsAdminUser]
+    # permission_classes = [permissions.IsAdminUser]
     http_method_names = ['get', 'post', 'put', 'patch', 'head', 'options', 'trace']
 
 
@@ -25,7 +25,7 @@ class MentorViewSet(viewsets.ModelViewSet):
 
     queryset = Mentor.objects.all().order_by('id')
     serializer_class = MentorSerializer
-    permission_classes = [permissions.IsAdminUser]
+    # permission_classes = [permissions.IsAdminUser]
     http_method_names = ['get', 'post', 'put', 'patch', 'head', 'options', 'trace']
 
 
@@ -35,6 +35,6 @@ class MentorshipViewSet(viewsets.ModelViewSet):
 
     queryset = Mentorship.objects.all().order_by('id')
     serializer_class = MentorshipSerializer
-    permission_classes = [permissions.IsAdminUser]
+    # permission_classes = [permissions.IsAdminUser]
     http_method_names = ['get', 'post', 'put', 'patch', 'head', 'options', 'trace']
 

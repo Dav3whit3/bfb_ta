@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from itertools import permutations
 from django.contrib import admin
 from django.urls import include, path, re_path
 from rest_framework import routers, permissions
@@ -33,7 +34,10 @@ schema_view = get_schema_view(
         license=openapi.License(name="BSD License"),
     ),
     public=True,
-    permission_classes=[permissions.IsAdminUser],
+    permission_classes=[
+        # permissions.IsAdminUser
+        permissions.AllowAny
+    ],
 )
 
 router = routers.DefaultRouter()
